@@ -53,7 +53,7 @@ MENU = ['햄버거' , '떡볶이'] #메뉴 리스트
 #날씨를 활용한 메뉴 추천
 recommend = weather_recommendation.get_recommendedList() #추천메뉴를 recommend 변수로 지정
 
-play_mp3file('./Beep.mp3')
+speak_TTS("프로그램 시작")
 while(True): 
   #음성인식 시작
   audio = exprocess_audiodata(speech)
