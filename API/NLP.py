@@ -12,6 +12,13 @@ from API.konrum import convert as n2k
 #nltk.download('punkt')
 #nltk.download('averaged_perceptron_tagger')
 
+def getWordsFromList(_txt,_list):
+  mylist = []
+  for item in _list:
+    if(_txt.find(item)>=0):
+      mylist.append(item)
+  return mylist
+
 def extract_nums(txt):
     translated = GoogleTranslator(source='auto', target='en').translate(txt)  
     tokens = word_tokenize(translated)
@@ -45,5 +52,5 @@ def makeTextwithMenuAndNum(_menu,_nums):
         print(item[1])
         num = n2k(item[1], 수사='양수사-관형사', 한자어=False)
         middle += f' {item[0]} {num} 개,'
-    end = "맞습니까?"
+    end = "으로 확인 되었습니다."
     return first + middle + end   
