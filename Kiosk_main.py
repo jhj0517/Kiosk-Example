@@ -9,15 +9,9 @@ import API.NLP as nlp
 #자체 변수들 모듈
 import Constants as c
 
-#노란 줄 뜰 경우, 깃허브 에서 명령어 실행해 다 설치되어 있는지 확인
+#노란 줄 뜰 경우, 깃허브 https://github.com/jhj0517/Kiosk-Example 의 README 확인 후
+#터미널에서 명령어 실행해 패키지 다 설치되어 있는지 확인
 
-# """텍스트에 리스트의 아이템이 들어있는지 확인하는 메소드"""
-# def getExtractedMenubyAPI(txt, _list):
-#   API_URL = '이 URL 을 교체해서 실행'
-#   param = {'mylist':_list, 'sentence':txt}
-#   return requests.get(url=API_URL,params=param).json()
-
-"""마이크로 부터 받은 음성 데이터를 전처리"""
 def exprocess_audiodata(_speech):
     with _speech as source: 
       print("음성 인식 중!…")

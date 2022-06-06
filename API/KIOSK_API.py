@@ -11,3 +11,9 @@ def getExtractedMenu(txt, _list):
     if(txt.find(item)>=0):
       mylist.append(item)
   return mylist
+
+# """텍스트에 리스트의 아이템이 들어있는지 확인하는 메소드"""
+# def getExtractedMenubyAPI(txt, _list):
+#   API_URL = '이 URL 을 교체해서 실행'
+#   param = {'mylist':_list, 'sentence':txt}
+#   return requests.get(url=API_URL,params=param).json()
