@@ -15,3 +15,5 @@ pip install nltk
 pip install word2number
 
 pip install num2words
+
+pip install --upgrade google-cloud-texttospeech

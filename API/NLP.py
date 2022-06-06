@@ -4,14 +4,11 @@ from nltk.tokenize import word_tokenize
 from word2number import w2n
 from API.konrum import convert as n2k
 
-#pip install num2words
-#pip install deep-translator
-#pip nltk
-
 #최초 실행시 실행시켜야 되는 메소드
 #nltk.download('punkt')
 #nltk.download('averaged_perceptron_tagger')
 
+"""문장에서 리스트의 변수들을 뽑아내는 메소드"""
 def getWordsFromList(_txt,_list):
   mylist = []
   for item in _list:
@@ -19,6 +16,7 @@ def getWordsFromList(_txt,_list):
       mylist.append(item)
   return mylist
 
+"""NLP로 문장에서 숫자를 뽑아내는 메소드"""
 def extract_nums(txt):
     translated = GoogleTranslator(source='auto', target='en').translate(txt)  
     tokens = word_tokenize(translated)
@@ -36,6 +34,8 @@ def extract_nums(txt):
         numlist[i] = w2n.word_to_num(numlist[i])
     return numlist
 
+
+"""뽑아낸 숫자 리스트와 메뉴 리스트를 서로 합침"""
 def grouping_withMenuAndNums(_menu,_nums):
     groupingList =[]
     if(len(_menu)==len(_nums)):
@@ -43,7 +43,7 @@ def grouping_withMenuAndNums(_menu,_nums):
             groupingList.append((_menu[i] ,_nums[i]))
     return groupingList        
 
-"""메뉴와 개수 리스트를 받아서 그럴듯한 문장을 만들어주는 메소드""" 
+"""합친 리스트로 문장을 만들어내는 메소드""" 
 def makeTextwithMenuAndNum(_menu,_nums):
     _list = grouping_withMenuAndNums(_menu,_nums)
     first = "주문하신 메뉴는" 
